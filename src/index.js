@@ -16,6 +16,16 @@ window.onload = () => {
     // 나중에 채우긴 할 듯
   }, true);
 
+  document.querySelector('#title').addEventListener('click', () => {
+    document.querySelector('#dim').classList.add('dimmed');
+    document.querySelector('#loadingSpinner').classList.remove('hide');
+
+    setTimeout(() => {
+      document.querySelector('#dim').classList.remove('dimmed');
+      document.querySelector('#loadingSpinner').classList.add('hide');
+    }, 5000);
+  });
+
   document.querySelectorAll('.moveWriteNote').forEach(($item) => {
     $item.addEventListener('click', () => {
       window.location.href = '/write.html';

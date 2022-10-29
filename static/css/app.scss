@@ -55,6 +55,14 @@ $palette__color--grey: #919192;
     background: green;
   }
 }
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
 
 html {
   width: 100%;
@@ -294,6 +302,14 @@ hr {
     display: flex;
   }
 
+  .spinner {
+    border: 0.5rem solid rgb(171 170 158 / 100%);
+    border-top: 0.5rem solid black;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    animation: spinner 3s linear infinite;
+  }
   .popup {
     background-color: white;
     border-radius: 5px;

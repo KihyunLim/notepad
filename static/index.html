@@ -11,7 +11,7 @@
     <div class="note-spine__side">
       <img src="/static/img/icon/gear-solid.svg" alt="" class="svg" id="showPopupSetting">
     </div>
-    <div class="note-spine__title">lkh's notepad</div>
+    <div class="note-spine__title" id="title">lkh's notepad</div>
     <div class="note-spine__side note-spine__side__right">
       <img src="/static/img/icon/pen-to-square-solid.svg" alt="작성" class="svg wide-screen moveWriteNote">
       <img src="/static/img/icon/floppy-disk-solid.svg" alt="저장" class="svg" id="saveNote">
@@ -238,6 +238,7 @@
 
   <!-- popup -->
   <div class="dim-layer" id="dim">
+    <div class="spinner hide" id="loadingSpinner"></div>
     <div class="popup popup__type--auth hide" id="popupAuth">
       <div class="popup__header">
         <div class="popup__title">Are you lkh?</div>
