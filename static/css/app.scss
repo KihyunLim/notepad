@@ -72,11 +72,17 @@ html {
 
 body {
   height: 100%;
-  background: url(/static/img/index/LegalPad_16x10_noneHeadTail_endMark_1.png);
+  background: url(/static/img/index/LegalPad_index_endMark.png);
   background-size: 100vw;
   background-repeat: repeat-y;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   // font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Nanum Pen Script', cursive;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 input[type=text],input[type=password],select {
@@ -450,7 +456,9 @@ hr {
 
 @media (max-width: 800px) {
   body {
-    background: url(/static/img/index/LegalPad_16x10_noneHeadTail_endMark_mobile_2.png) repeat center;
+    background: url(/static/img/index/LegalPad_phone_endMark.png);
+    background-size: 100vw;
+    background-repeat: repeat-y;
   }
 
   section.paper > aside {
