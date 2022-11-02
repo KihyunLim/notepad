@@ -4,26 +4,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
+    index: './src/index.tsx',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'static/index.html',
       filename : 'index.html',
     }),
-    new HtmlWebpackPlugin({
+    /* new HtmlWebpackPlugin({
       template: 'view/write.html',
       filename : 'write.html',
     }),
     new HtmlWebpackPlugin({
       template: 'view/detail.html',
       filename : 'detail.html',
-    }),
+    }), */
   ],
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
     hot: true,
+  },
+  resolve: {
+    extensions: [".ts", ".tsx"]
   },
   module: {
     rules: [
@@ -55,6 +58,20 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ],
   },
