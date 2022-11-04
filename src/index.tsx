@@ -2,6 +2,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import "../static/css/app.scss";
 
-import { AppLayout } from './components/AppLayout';
+import { App } from './pages/App';
 
-ReactDOM.render(<AppLayout />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector('#root'));
