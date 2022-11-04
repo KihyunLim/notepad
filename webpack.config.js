@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'static/index.html',
+      template: 'src/assets/index.html',
       filename : 'index.html',
     }),
     /* new HtmlWebpackPlugin({
@@ -26,7 +26,7 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: [".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js"]
   },
   module: {
     rules: [

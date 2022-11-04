@@ -72,7 +72,7 @@ html {
 
 body {
   height: 100%;
-  background: url(/static/img/index/LegalPad_index_endMark.png);
+  background: url(/src/assets/img/index/LegalPad_index_endMark.png);
   background-size: 100vw;
   background-repeat: repeat-y;
   scrollbar-width: none;
@@ -355,15 +355,15 @@ hr {
           flex-basis: calc(100% - 3.5rem);
         }
         .bookmark__order {
-          background: url(/static/img/icon/arrow-up-arrow-down-solid.svg);
+          background: url(/src/assets/img/icon/arrow-up-arrow-down-solid.svg);
           @include icon;
         }
         .bookmark__delete {
-          background: url(/static/img/icon/trash-can-solid.svg);
+          background: url(/src/assets/img/icon/trash-can-solid.svg);
           @include icon;
         }
         .bookmark__add {
-          background: url(/static/img/icon/plus-solid.svg);
+          background: url(/src/assets/img/icon/plus-solid.svg);
           @include icon;
         }
       }
@@ -383,7 +383,7 @@ hr {
         top: 0;
         right: 0;
         margin: 0.3rem 0.4rem;
-        background: url(/static/img/icon/xmark-solid.svg);
+        background: url(/src/assets/img/icon/xmark-solid.svg);
         background-size: contain;
         width: 0.8rem;
         height: 0.8rem;
@@ -456,7 +456,7 @@ hr {
 
 @media (max-width: 800px) {
   body {
-    background: url(/static/img/index/LegalPad_phone_endMark.png);
+    background: url(/src/assets/img/index/LegalPad_phone_endMark.png);
     background-size: 100vw;
     background-repeat: repeat-y;
   }

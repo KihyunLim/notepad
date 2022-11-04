@@ -1,7 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import "../static/css/app.scss";
+import { RouterProvider } from "react-router-dom";
 
-import { App } from './pages/App';
+import router from './router/index';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+import "./assets/css/app.scss";
+
+ReactDOM.render(<RouterProvider router={router} />, document.querySelector('#root'));

@@ -4,7 +4,7 @@ export const NoteSpine = () => {
   return (
     <header className="note-spine">
       <div className="note-spine__side">
-        <img src="/static/img/icon/gear-solid.svg" alt="" className="svg" id="showPopupSetting" />
+        <img src={require("/src/assets/img/icon/gear-solid.svg")} alt="" className="svg" id="showPopupSetting" />
       </div>
       <div className="note-spine__title" id="title">lkh's notepad</div>
       <div className="note-spine__side note-spine__side__right">
