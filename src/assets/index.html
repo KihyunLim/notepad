@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="icon" href="/static/img/index/logo.png">
+  <link rel="icon" href="/src/assets/img/index/logo.png">
   <title>notepad</title>
 </head>
 <body>
   <header class="note-spine">
     <div class="note-spine__side">
-      <img src="/static/img/icon/gear-solid.svg" alt="" class="svg" id="showPopupSetting">
+      <div class="svg svg-gear-solid" id="showPopupSetting"><span>설정</span></div>
     </div>
     <div class="note-spine__title" id="title">lkh's notepad</div>
     <div class="note-spine__side note-spine__side__right">
-      <img src="/static/img/icon/pen-to-square-solid.svg" alt="작성" class="svg wide-screen moveWriteNote">
-      <img src="/static/img/icon/floppy-disk-solid.svg" alt="저장" class="svg" id="saveNote">
-      <img src="/static/img/icon/trash-can-solid-white.svg" alt="삭제" class="svg wide-screen" id="deleteNote">
-      <img src="/static/img/icon/bars-solid.svg" alt="메뉴" class="svg" id="showMenu">
-      <img src="/static/img/icon/xmark-solid-white.svg" alt="닫기" class="svg" id="hideMenu">
+      <div class="svg svg-pen-to-square-solid wide-screen moveWriteNote"><span>작성</span></div>
+      <div class="svg svg-floppy-disk-solid" id="saveNote"><span>저장</span></div>
+      <div class="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
+      <div class="svg svg-bars-solid" id="showMenu"><span>메뉴</span></div>
+      <div class="svg svg-xmark-solid-white" id="hideMenu"><span>닫기</span></div>
       <div class="menu-list menu-list__type--menu hide" id="menuMain">
         <div class="menu moveWriteNote">
-          <img src="/static/img/icon/pen-to-square-solid.svg" alt="작성" class="svg">
+          <div class="svg svg-pen-to-square-solid"><span>작성</span></div>
           <div class="menu__name">새 노트</div>
         </div>
         <div class="menu" id="showBookmarkList">
-          <img src="/static/img/icon/bookmark-solid.svg" alt="북마크" class="svg">
+          <div class="svg svg-bookmark-solid"><span>북마크</span></div>
           <div class="menu__name">북마크</div>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -67,7 +67,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -80,7 +80,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -93,7 +93,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -106,7 +106,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -119,7 +119,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -132,7 +132,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -145,7 +145,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -158,7 +158,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -171,7 +171,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -184,7 +184,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -197,7 +197,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -210,7 +210,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -223,7 +223,7 @@
       <div class="post__cell">
         <div class="post">
           <div class="post__title">제목</div>
-          <img src="/static/img/sample/map.png" alt="" class="post__thumbnail" onerror="this.style.display='none';">
+          <img src="/src/assets/img/sample/sample1.jpg" alt="" class="post__thumbnail" onerror="this.style.display='none';">
           <div class="post__content">
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
             내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 

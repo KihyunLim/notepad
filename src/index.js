@@ -1,4 +1,4 @@
-import "/static/css/app.scss";
+import "/src/assets/css/app.scss";
 
 console.log('index.js!!');
 

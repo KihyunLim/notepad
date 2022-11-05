@@ -13,12 +13,33 @@ $palette__color--deep-blue: #002060;
 $palette__color--puple: #7030A0;
 $palette__color--grey: #919192;
 
+@mixin hidden-text {
+  position:absolute !important;  
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip:rect(1px, 1px, 1px, 1px);
+}
 @mixin palette-color {
   box-sizing: border-box;
   border: solid black 1px;
   border-radius: 5px;
   width: 1.8rem;
   height: 1.8rem;
+}
+@mixin svg {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0 0.3rem;
+
+  span {
+    @include hidden-text;
+  }
 }
 @mixin icon {
   background-size: contain;
@@ -72,7 +93,7 @@ html {
 
 body {
   height: 100%;
-  background: url(/static/img/index/LegalPad_index_endMark.png);
+  background: url(/src/assets/img/index/LegalPad_index_endMark.png);
   background-size: 100vw;
   background-repeat: repeat-y;
   scrollbar-width: none;
@@ -127,19 +148,36 @@ hr {
   .note-spine__side {
     flex: 1 2 25%;
     position: relative;
-
+    display: flex;
+    
     &.note-spine__side__right {
-      text-align: right;
-
-      .wide-screen {
-        display: inline;
-      }
+      justify-content: end;
     }
 
     .svg {
-      width: 0.85rem;
-      height: 0.85rem;
-      margin: 0 0.3rem;
+      @include svg;
+
+      &.svg-gear-solid {
+        background-image: url(/src/assets/img/icon/gear-solid.svg);
+      }
+      &.svg-pen-to-square-solid {
+        background-image: url(/src/assets/img/icon/pen-to-square-solid.svg);
+      }
+      &.svg-floppy-disk-solid {
+        background-image: url(/src/assets/img/icon/floppy-disk-solid.svg);
+      }
+      &.svg-trash-can-solid-white {
+        background-image: url(/src/assets/img/icon/trash-can-solid-white.svg);
+      }
+      &.svg-bars-solid {
+        background-image: url(/src/assets/img/icon/bars-solid.svg);
+      }
+      &.svg-xmark-solid-white {
+        background-image: url(/src/assets/img/icon/xmark-solid-white.svg);
+      }
+      &.svg-bookmark-solid {
+        background-image: url(/src/assets/img/icon/bookmark-solid.svg);
+      }
     }
   }
 }
@@ -163,7 +201,7 @@ hr {
   // 글 목록
   .post__grid {
     flex-basis: 90%;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* grid-auto-rows: minmax(0, 350px); */
@@ -231,7 +269,7 @@ hr {
   // 노트 작성/수정
   .write-wrap {
     flex-basis: 90%;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 
     .write__bookmark {
       display: grid;
@@ -269,7 +307,7 @@ hr {
   // 노트 상세
   .detail-wrap {
     flex-basis: 90%;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 
     .detail__head {
       .title {
@@ -355,15 +393,15 @@ hr {
           flex-basis: calc(100% - 3.5rem);
         }
         .bookmark__order {
-          background: url(/static/img/icon/arrow-up-arrow-down-solid.svg);
+          background: url(/src/assets/img/icon/arrow-up-arrow-down-solid.svg);
           @include icon;
         }
         .bookmark__delete {
-          background: url(/static/img/icon/trash-can-solid.svg);
+          background: url(/src/assets/img/icon/trash-can-solid.svg);
           @include icon;
         }
         .bookmark__add {
-          background: url(/static/img/icon/plus-solid.svg);
+          background: url(/src/assets/img/icon/plus-solid.svg);
           @include icon;
         }
       }
@@ -383,7 +421,7 @@ hr {
         top: 0;
         right: 0;
         margin: 0.3rem 0.4rem;
-        background: url(/static/img/icon/xmark-solid.svg);
+        background: url(/src/assets/img/icon/xmark-solid.svg);
         background-size: contain;
         width: 0.8rem;
         height: 0.8rem;
@@ -456,7 +494,7 @@ hr {
 
 @media (max-width: 800px) {
   body {
-    background: url(/static/img/index/LegalPad_phone_endMark.png);
+    background: url(/src/assets/img/index/LegalPad_phone_endMark.png);
     background-size: 100vw;
     background-repeat: repeat-y;
   }
