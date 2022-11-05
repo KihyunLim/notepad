@@ -269,7 +269,7 @@ hr {
   // 노트 작성/수정
   .write-wrap {
     flex-basis: 90%;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 
     .write__bookmark {
       display: grid;
@@ -307,7 +307,7 @@ hr {
   // 노트 상세
   .detail-wrap {
     flex-basis: 90%;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 
     .detail__head {
       .title {
