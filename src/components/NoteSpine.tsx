@@ -4,22 +4,22 @@ export const NoteSpine = () => {
   return (
     <header className="note-spine">
       <div className="note-spine__side">
-        <img src={require("/src/assets/img/icon/gear-solid.svg")} alt="" className="svg" id="showPopupSetting" />
+        <div className="svg svg-gear-solid" id="showPopupSetting"><span>설정</span></div>
       </div>
       <div className="note-spine__title" id="title">lkh's notepad</div>
       <div className="note-spine__side note-spine__side__right">
-        <img src="/static/img/icon/pen-to-square-solid.svg" alt="작성" className="svg wide-screen moveWriteNote" />
-        <img src="/static/img/icon/floppy-disk-solid.svg" alt="저장" className="svg" id="saveNote" />
-        <img src="/static/img/icon/trash-can-solid-white.svg" alt="삭제" className="svg wide-screen" id="deleteNote" />
-        <img src="/static/img/icon/bars-solid.svg" alt="메뉴" className="svg" id="showMenu" />
-        <img src="/static/img/icon/xmark-solid-white.svg" alt="닫기" className="svg" id="hideMenu" />
+        <div className="svg svg-pen-to-square-solid wide-screen moveWriteNote"><span>작성</span></div>
+        <div className="svg svg-floppy-disk-solid" id="saveNote"><span>저장</span></div>
+        <div className="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
+        <div className="svg svg-bars-solid" id="showMenu"><span>메뉴</span></div>
+        <div className="svg svg-xmark-solid-white" id="hideMenu"><span>닫기</span></div>
         <div className="menu-list menu-list__type--menu hide" id="menuMain">
           <div className="menu moveWriteNote">
-            <img src="/static/img/icon/pen-to-square-solid.svg" alt="작성" className="svg" />
+            <div className="svg svg-pen-to-square-solid"><span>작성</span></div>
             <div className="menu__name">새 노트</div>
           </div>
           <div className="menu" id="showBookmarkList">
-            <img src="/static/img/icon/bookmark-solid.svg" alt="북마크" className="svg" />
+            <div className="svg svg-bookmark-solid"><span>북마크</span></div>
             <div className="menu__name">북마크</div>
           </div>
         </div>

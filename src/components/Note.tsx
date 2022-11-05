@@ -12,7 +12,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -25,7 +25,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -38,7 +38,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -51,7 +51,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -64,7 +64,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/sample1.jpg" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -77,7 +77,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -90,7 +90,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -103,7 +103,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -116,7 +116,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -129,7 +129,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/sample1.jpg" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -142,7 +142,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -155,7 +155,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -168,7 +168,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
@@ -181,7 +181,7 @@ export const Note = () => {
         <div className="post__cell">
           <div className="post">
             <div className="post__title">제목</div>
-            <img src="/static/img/sample/map.png" alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
+            <img src={require("/src/assets/img/sample/sample1.jpg")} alt="" className="post__thumbnail"/*  onError="this.style.display='none';" */ />
             <div className="post__content">
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
               내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
