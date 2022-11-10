@@ -1,5 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");  // 정적파일 복사!!
+
+const ASSET_PATH = '/public';
 
 module.exports = {
   mode: 'development',
@@ -11,6 +15,14 @@ module.exports = {
       template: 'src/assets/index.html',
       filename : 'index.html',
     }),
+    new webpack.DefinePlugin({
+      'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: 'public' },
+      ]
+    })
     /* new HtmlWebpackPlugin({
       template: 'view/write.html',
       filename : 'write.html',
