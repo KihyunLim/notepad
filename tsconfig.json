@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
-        // "baseUrl": "src", // 아직 쓸 이유가 없다.. https://eomtttttt-develop.tistory.com/231
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["*"],
+        },
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
