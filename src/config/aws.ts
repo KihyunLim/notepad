@@ -3,14 +3,14 @@ import { CognitoIdentityClient, CreateIdentityPoolCommand } from "@aws-sdk/clien
 const client = new CognitoIdentityClient({ 
   region: 'ap-northeast-2',
   credentials: {
-    accessKeyId: '',
-    secretAccessKey: ''
+    accessKeyId: process.env.ACCESS_KEY_ID as string,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY as string,
   }
 });
 
 const params = {
   AllowUnauthenticatedIdentities: true,
-  IdentityPoolName: 'ap-northeast-2_fft566I1b'
+  IdentityPoolName: process.env.IDENTITY_POOL_NAME as string
 };
 const command = new CreateIdentityPoolCommand(params);
 
