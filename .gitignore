@@ -154,7 +154,7 @@ psd
 thumb
 sketch
 
-### by me ###
-.vscode
-
 # End of https://www.toptal.com/developers/gitignore/api/node,react
+
+### local ###
+.vscode
