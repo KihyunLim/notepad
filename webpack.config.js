@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// @ts-ignore
 const CopyPlugin = require("copy-webpack-plugin");  // 정적파일 복사!!
 
 const ASSET_PATH = '/public';
