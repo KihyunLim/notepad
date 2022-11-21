@@ -7,14 +7,6 @@ import router from './router/index';
 
 import "./assets/css/app.scss";
 
-const amplify = new AwsAmplify();
-
-console.log('settimeout countdown');
-setTimeout(async () => {
-  console.log('settimeout run');
-  const pw = prompt('password : ') || '';
-  await amplify.signin('khlim@notepad.me', pw);
-  console.log('settimeout end');
-}, 3000);
+new AwsAmplify();
 
 ReactDOM.render(<RouterProvider router={router} />, document.querySelector('#root'));
