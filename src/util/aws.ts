@@ -30,7 +30,7 @@ export class AwsAmplify {
       console.log(result);
 
       if (result.challengeName === 'NEW_PASSWORD_REQUIRED') {
-        const resultNewPassword = await Auth.completeNewPassword(result, 'newpassword');
+        const resultNewPassword = await Auth.completeNewPassword(result, process.env.COGNITO_NEW_PASSWORD as string);
         console.log('resultNewPassword : ', resultNewPassword);
       }
     } catch(error) {
@@ -93,3 +93,50 @@ export class AwsAmplify {
     }
   }
 }
+
+/**
+ * 나중에 라우터에서 로그인 여부 확인
+ * https://github.com/mubbashir10/aws-cognito-react-auth
+ */
+/* 
+import React from "react";
+import { Auth } from "aws-amplify";
+import { Route, Redirect } from "react-router-dom";
+
+interface Props {
+  component: React.FC;
+}
+const ProtectedRoute: React.FC<Props> = ({ component }) => {
+  const [isAuthenticated, setLoggedIn] = React.useState(true);
+  React.useEffect(() => {
+    (async () => {
+      let user = null;
+
+      try {
+        user = await Auth.currentAuthenticatedUser();
+        if (user) {
+          setLoggedIn(true);
+        } else {
+          setLoggedIn(false);
+        }
+      } catch (e) {
+        setLoggedIn(false);
+      }
+    })();
+  });
+
+  return (
+    <Route
+      render={(props) =>
+        isAuthenticated ? (
+          React.createElement(component)
+        ) : (
+          <Redirect to="/signin" />
+        )
+      }
+    />
+  );
+};
+
+export default ProtectedRoute;
+ */
