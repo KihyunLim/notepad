@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");  // 정적파일 복사!!
+const Dotenv = require('dotenv-webpack');
 
 const ASSET_PATH = '/public';
 
@@ -22,7 +23,8 @@ module.exports = {
       patterns: [
         { from: 'public', to: 'public' },
       ]
-    })
+    }),
+    new Dotenv(),
     /* new HtmlWebpackPlugin({
       template: 'view/write.html',
       filename : 'write.html',
