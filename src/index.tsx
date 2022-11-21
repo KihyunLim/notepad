@@ -7,7 +7,6 @@ import router from './router/index';
 
 import "./assets/css/app.scss";
 
-// @ts-ignore
 const amplify = new AwsAmplify();
 
 console.log('settimeout countdown');

@@ -1,10 +1,10 @@
 import { Amplify, Auth }  from "aws-amplify";
 // 이거 아니여도 될듯 함
-/*import * as AWS from "aws-sdk";
+/* import * as AWS from "aws-sdk";
 
 AWS.config.region = process.env.REGION; // 리전
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: process.env.COGNITO_USER_POOL_ID,
+    IdentityPoolId: process.env.COGNITO_IDENTITY_POOL_ID as string,
 }); */
 
 export class AwsAmplify {
@@ -18,7 +18,6 @@ export class AwsAmplify {
   }
 
   init() {
-    // @ts-ignore
     Amplify.configure({
       aws_cognito_region: process.env.REGION,
       aws_user_pools_id: process.env.COGNITO_USER_POOL_ID,
@@ -29,6 +28,10 @@ export class AwsAmplify {
   async signin(email: string, password: string) {
     let result: any = undefined;
 
+    /**
+     * signIn
+     * return : CognitoUser
+     */
     try {
       result = await Auth.signIn(email, password);
       console.log(result);
@@ -40,35 +43,60 @@ export class AwsAmplify {
     } catch(error) {
       console.log(error);
     }
+
+    /**
+     * currentCredentials
+     * return : No Cognito Identity pool provided for unauthenticated access
+     */
     try {
       const temp1 = await Auth.currentCredentials();
       console.log('currentCredentials : ', temp1);
     } catch(error) {
       console.log('currentCredentials e : ', error);
     }
+
+    /**
+     * currentSession
+     * return : CognitoUserSession (accessToken, clockDrift, idToken, refreshToke)
+     */
     try {
       const temp2 = await Auth.currentSession();
       console.log('currentSession : ', temp2);
     } catch(error) {
       console.log('currentSession e : ', error);
     }
+
+    /**
+     * currentUserCredentials
+     * return : No Cognito Identity pool provided for unauthenticated access
+     */
     try {
       const temp3 = await Auth.currentUserCredentials();
       console.log('currentUserCredentials : ', temp3);
     } catch(error) {
       console.log('currentUserCredentials e : ', error);
     }
+
+    /**
+     * currentUserInfo
+     * return : attributes, id: undefined, username: "0f~~1f6-9~~f-4~~a-a~~6-c08~~~f36f"
+     */
     try {
       const temp4 = await Auth.currentUserInfo();
       console.log('currentUserInfo : ', temp4);
     } catch(error) {
       console.log('currentUserInfo e : ', error);
     }
+
+    /**
+     * currentAuthenticatedUser
+     * return : CognitoUser
+     */
     try {
-      const temp5 = await Auth.currentUserInfo();
-      console.log('currentUserInfo : ', temp5);
+      const temp5 = await Auth.currentAuthenticatedUser();
+      console.log('currentAuthenticatedUser : ', temp5);
     } catch(error) {
-      console.log('currentUserInfo e : ', error);
+      console.log('currentAuthenticatedUser e : ', error);
     }
   }
 }
