@@ -1,11 +1,4 @@
 import { Amplify, Auth }  from "aws-amplify";
-// 이거 아니여도 될듯 함
-/* import * as AWS from "aws-sdk";
-
-AWS.config.region = process.env.REGION; // 리전
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: process.env.COGNITO_IDENTITY_POOL_ID as string,
-}); */
 
 export class AwsAmplify {
   // private email: string;
