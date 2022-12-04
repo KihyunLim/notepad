@@ -3,10 +3,10 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-import { App } from "../pages/App";
-import { NoteList } from "../pages/NoteList";
-import { NoteWrite } from "../pages/NoteWrite";
-import { NoteDetail } from "../pages/NoteDetail";
+import { App } from "@/src/pages/App";
+import { NoteList } from "@/src/pages/NoteList";
+import { NoteWrite } from "@/src/pages/NoteWrite";
+import { NoteDetail } from "@/src/pages/NoteDetail";
 
 const router = createBrowserRouter([
   {

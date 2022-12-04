@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { AppLayout } from '../components/AppLayout';
+import { AppLayout } from '@/src/components/AppLayout';
 
 export const App = () => {
   return (

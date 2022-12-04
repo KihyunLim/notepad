@@ -1,13 +1,19 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import { customAxois as axios } from "@/src/util/axios";
 
 export const NoteSpine = () => {
+  const testFunc = async () => {
+    const response = await axios.get('/note-list');
+    console.log(response);
+  };
+
   return (
     <header className="note-spine">
       <div className="note-spine__side">
         <div className="svg svg-gear-solid" id="showPopupSetting"><span>설정</span></div>
       </div>
-      <div className="note-spine__title" id="title">lkh's notepad</div>
+      <div className="note-spine__title" id="title" onClick={testFunc}>lkh's notepad</div>
       <div className="note-spine__side note-spine__side__right">
         <NavLink to="write"><div className="svg svg-pen-to-square-solid wide-screen moveWriteNote"><span>작성</span></div></NavLink>
         <div className="svg svg-floppy-disk-solid" id="saveNote"><span>저장</span></div>
