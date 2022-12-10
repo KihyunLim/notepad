@@ -66,14 +66,35 @@ $palette__color--grey: #919192;
     max-width: 100%;
     width: 100%;
   }
-  &.bookmark__color--red {
-    background: red;
+  &.bookmark__color--deep-red {
+    background: $palette__color--deep-red;
   }
-  &.bookmark__color--blue {
-    background: blue;
+  &.bookmark__color--red {
+    background: $palette__color--red;
+  }
+  &.bookmark__color--orrange {
+    background: $palette__color--orrange;
+  }
+  &.bookmark__color--light-green {
+    background: $palette__color--light-green;
   }
   &.bookmark__color--green {
-    background: green;
+    background: $palette__color--green;
+  }
+  &.bookmark__color--light-blue {
+    background: $palette__color--light-blue;
+  }
+  &.bookmark__color--blue {
+    background: $palette__color--blue;
+  }
+  &.bookmark__color--deep-blue {
+    background: $palette__color--deep-blue;
+  }
+  &.bookmark__color--puple {
+    background: $palette__color--puple;
+  }
+  &.bookmark__color--grey {
+    background: $palette__color--grey;
   }
 }
 @keyframes spinner {

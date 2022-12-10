@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");  // 정적파일 복사!!
+const CopyPlugin = require('copy-webpack-plugin');  // 정적파일 복사!!
 const Dotenv = require('dotenv-webpack');
 
 const ASSET_PATH = '/public';
@@ -49,7 +49,7 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.m?js$/,
+        test: /\.(m?js|jsx|tsx|ts)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',

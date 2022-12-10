@@ -1,6 +1,6 @@
 import * as React from "react";
 import { iNote } from "@/src/type/interface";
-import { NoteItem } from "../components/NoteItem";
+import { NoteItem } from "@/src/components/NoteItem";
 
 const noteList: iNote[] = [
   /* {
