@@ -1,17 +1,18 @@
-import * as React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { TNoteList } from "@/src/typeDefinition";
+import { StateNotepad } from './App';
+
 import { NoteItem } from "@/src/components/NoteItem";
 
-const noteList: TNoteList = [
-  /* {
-    title: '제목',
-    thumbnailSrc: process.env.ASSET_PATH + '/img/sample/sample1.jpg',
-    content: '내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 \r\n내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 \r\n내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 \r\n내용내뇨용 내용내뇨용 내용내뇨용',
-    registDate: '2022-09-25',
-  }, */
-];
-
 export const NoteList = () => {
+  const [noteList, setNoteList] = useState<TNoteList>([]);
+  const stateNotepad = useContext(StateNotepad);
+
+  useEffect(() => {
+    console.log('detect change note list : ', stateNotepad);
+    setNoteList(stateNotepad.noteList);
+  }, [stateNotepad.noteList]);
+
   return (
     <article className="post__grid">
       {noteList.map((note) => (<NoteItem note={note} />))}

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { TBookmarkList, IBookmark } from '@/src/typeDefinition'
+import { TBookmarkList } from '@/src/typeDefinition'
 import { StateNotepad } from '@/src/pages/App';
 
 export const Note = () => {
@@ -8,7 +8,7 @@ export const Note = () => {
   const stateNotepad = useContext(StateNotepad);
 
   useEffect(() => {
-    console.log('detect change data : ', stateNotepad);
+    console.log('detect change bookmark list : ', stateNotepad);
     setBookmarkList(stateNotepad.bookmarkList);
   }, [stateNotepad.bookmarkList]);
   
