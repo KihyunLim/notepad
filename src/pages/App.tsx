@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import { customAxois as axios } from "@/src/util/axios";
+import { Auth } from "aws-amplify";
 
 import { INotepad } from '@/src/typeDefinition';
 import { AppLayout } from '@/src/components/AppLayout';
@@ -29,6 +30,24 @@ function reducer(state: INotepad, action: any): INotepad {
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, notepad);
+
+  useEffect(() => {
+    (async () => {
+      let user = null;
+
+      try {
+        user = await Auth.currentAuthenticatedUser();
+
+        if (user) {
+          console.log('authenticated user : ', user);
+        } else {
+          console.log('unauthenticated user!!');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     console.log('App.tsx loaded!!');
