@@ -122,6 +122,11 @@ body {
   // font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Nanum Pen Script', cursive;
 
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -149,6 +154,14 @@ hr {
 }
 .hide {
   display: none !important;
+}
+
+// 노트 영역에서는 드래그 가능
+.draggable {
+  -webkit-user-select:all;
+  -moz-user-select:all;
+  -ms-user-select:all;
+  user-select:all
 }
 
 // 노트등

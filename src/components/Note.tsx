@@ -1,13 +1,21 @@
-import * as React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { TBookmarkList, IBookmark } from '@/src/typeDefinition'
+import { StateNotepad } from '@/src/pages/App';
 
 export const Note = () => {
+  const [bookmarkList, setBookmarkList] = useState<TBookmarkList>([]);
+  const stateNotepad = useContext(StateNotepad);
+
+  useEffect(() => {
+    console.log('detect change data : ', stateNotepad);
+    setBookmarkList(stateNotepad.bookmarkList);
+  }, [stateNotepad.bookmarkList]);
+  
   return (
     <section className="note">
       <aside className="bookmark__list">
-        <div className="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
-        <div className="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
-        <div className="bookmark bookmark__color--green">선택 아님2</div>
+        {bookmarkList.map((bookmark) => <div className={`bookmark bookmark__color--${bookmark.color}`}>{bookmark.bm_name}</div>)}
       </aside>
       <Outlet />
     </section>

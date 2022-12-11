@@ -1,8 +1,8 @@
 import * as React from "react";
-import { iNote } from "@/src/type/interface";
+import { TNoteList } from "@/src/typeDefinition";
 import { NoteItem } from "@/src/components/NoteItem";
 
-const noteList: iNote[] = [
+const noteList: TNoteList = [
   /* {
     title: '제목',
     thumbnailSrc: process.env.ASSET_PATH + '/img/sample/sample1.jpg',

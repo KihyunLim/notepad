@@ -1,13 +1,13 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
-import { iNote } from "@/src/type/interface";
+import { INote } from "@/src/typeDefinition";
 
 interface NoteItemProps {
-  note: iNote;
+  note: INote;
 }
 
 export const NoteItem = (props: NoteItemProps) => {
-  const note: any = props.note;
+  const note = props.note;
 
   return (
     <NavLink to="detail">
