@@ -1,17 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
 import { TNoteList } from "@/src/typeDefinition";
-import { StateNotepad } from './App';
+import { NotepadState } from './App';
 
 import { NoteItem } from "@/src/components/NoteItem";
 
 export const NoteList = () => {
   const [noteList, setNoteList] = useState<TNoteList>([]);
-  const stateNotepad = useContext(StateNotepad);
+  const notepadState = useContext(NotepadState);
 
   useEffect(() => {
-    console.log('detect change note list : ', stateNotepad);
-    setNoteList(stateNotepad.noteList);
-  }, [stateNotepad.noteList]);
+    console.log('detect change note list : ', notepadState);
+    setNoteList(notepadState.noteList);
+  }, [notepadState.noteList]);
 
   return (
     <article className="post__grid">

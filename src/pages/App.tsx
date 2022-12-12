@@ -2,16 +2,16 @@ import React, { useEffect, useReducer } from "react";
 import { customAxois as axios } from "@/src/util/axios";
 import { Auth } from "aws-amplify";
 
-import { INotepad } from '@/src/typeDefinition';
+import { INotepadState } from '@/src/typeDefinition';
 import { AppLayout } from '@/src/components/AppLayout';
 
-const notepad:INotepad = {
+const notepadState:INotepadState = {
   bookmarkList: [],
   noteList: [],
 };
-export const StateNotepad = React.createContext(notepad);
+export const NotepadState = React.createContext(notepadState);
 
-function reducer(state: INotepad, action: any): INotepad {
+function reducer(state: INotepadState, action: any): INotepadState {
   switch (action.type) {
     case 'LOAD_BOOKMARK_LIST': 
       return {
@@ -29,7 +29,7 @@ function reducer(state: INotepad, action: any): INotepad {
 }
 
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, notepad);
+  const [state, dispatch] = useReducer(reducer, notepadState);
 
   useEffect(() => {
     (async () => {
@@ -78,9 +78,9 @@ export const App = () => {
 
   return (
     <>
-      <StateNotepad.Provider value={state}>
+      <NotepadState.Provider value={state}>
         <AppLayout />
-      </StateNotepad.Provider>
+      </NotepadState.Provider>
     </>
   );
 };

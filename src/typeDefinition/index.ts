@@ -13,7 +13,7 @@ export interface IBookmark {
 }
 export type TBookmarkList = IBookmark[];
 
-export interface INotepad {
+export interface INotepadState {
   bookmarkList: TBookmarkList;
   noteList: TNoteList;
 }
