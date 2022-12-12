@@ -1,37 +1,15 @@
-import React, { useEffect, useReducer, createContext } from "react";
-import { customAxois as axios } from "@/src/util/axios";
+import React, { useEffect } from "react";
 import { Auth } from "aws-amplify";
+import { customAxois as axios } from "@/src/util/axios";
+import { IResponse_NoteList } from '@/src/typeDefinition';
 
-import { INotepadState } from '@/src/typeDefinition';
+import { ContextApiProvider, useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
 import { AppLayout } from '@/src/components/AppLayout';
 
-const notepadState:INotepadState = {
-  bookmarkList: [],
-  noteList: [],
-};
-export const NotepadState = createContext(notepadState);
-export const NotepadDispatch = createContext(null);
-
-function reducer(state: INotepadState, action: any): INotepadState {
-  switch (action.type) {
-    case 'LOAD_BOOKMARK_LIST': 
-      return {
-        ...state,
-        bookmarkList: action.bookmarkList
-      };
-    case 'LOAD_NOTE_LIST': 
-      return {
-        ...state,
-        noteList: state.noteList.concat(action.noteList)
-      };
-    default:
-      return state;
-  }
-}
-
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, notepadState);
+  const dispatch = useNotepadDispatch();
 
+  // useEffect에서 async/await 쓰는 법
   useEffect(() => {
     (async () => {
       let user = null;
@@ -50,11 +28,12 @@ export const App = () => {
     })();
   }, []);
 
+  // useEffect에서 then으로 사용하는 법
   useEffect(() => {
     console.log('App.tsx loaded!!');
 
     axios.get('/note-list')
-      .then(({ data }) => {
+      .then(({ data }: { data: IResponse_NoteList}) => {
         console.log('note list done : ', data);
         dispatch({
           type: 'LOAD_NOTE_LIST',
@@ -78,11 +57,8 @@ export const App = () => {
   }, []);
 
   return (
-    <>
-      <NotepadState.Provider value={state}>
-      {/* <NotepadDispatch.Provider value={reducer}></NotepadDispatch.Provider> */}
-        <AppLayout />
-      </NotepadState.Provider>
-    </>
+    <ContextApiProvider>
+      <AppLayout />
+    </ContextApiProvider>
   );
 };
