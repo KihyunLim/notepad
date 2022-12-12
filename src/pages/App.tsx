@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, createContext } from "react";
 import { customAxois as axios } from "@/src/util/axios";
 import { Auth } from "aws-amplify";
 
@@ -9,7 +9,8 @@ const notepadState:INotepadState = {
   bookmarkList: [],
   noteList: [],
 };
-export const NotepadState = React.createContext(notepadState);
+export const NotepadState = createContext(notepadState);
+export const NotepadDispatch = createContext(null);
 
 function reducer(state: INotepadState, action: any): INotepadState {
   switch (action.type) {
@@ -79,6 +80,7 @@ export const App = () => {
   return (
     <>
       <NotepadState.Provider value={state}>
+      {/* <NotepadDispatch.Provider value={reducer}></NotepadDispatch.Provider> */}
         <AppLayout />
       </NotepadState.Provider>
     </>
