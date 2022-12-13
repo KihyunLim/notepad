@@ -2,20 +2,22 @@ import React, { useReducer, createContext, useContext } from "react";
 import { INotepadState, TNotepadDispatch, TNotepadAction } from '@/src/typeDefinition';
 
 export const NotepadState = createContext<INotepadState | null>(null);
-export const NotepadDispatch = createContext<TNotepadDispatch | null>(null);
+export const NotepadDispatch = createContext<TNotepadDispatch | null>(() => null);
 
 function reducer(state: INotepadState, action: TNotepadAction): INotepadState {
   switch (action.type) {
-    case 'LOAD_BOOKMARK_LIST': 
+    case 'LOAD_BOOKMARK_LIST': {
       return {
         ...state,
         bookmarkList: action.bookmarkList,
       };
-    case 'LOAD_NOTE_LIST': 
+    }
+    case 'LOAD_NOTE_LIST': {
       return {
         ...state,
         noteList: state.noteList.concat(action.noteList)
       };
+    }
     default:
       return state;
   }

@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { TNoteList } from "@/src/typeDefinition";
-import { NotepadState } from './App';
+import { useNotepadState } from '@/src/contextApi/ContextApiProvider';
 
 import { NoteItem } from "@/src/components/NoteItem";
 
 export const NoteList = () => {
   const [noteList, setNoteList] = useState<TNoteList>([]);
-  const notepadState = useContext(NotepadState);
+  const notepadState = useNotepadState();
 
   useEffect(() => {
     console.log('detect change note list : ', notepadState);

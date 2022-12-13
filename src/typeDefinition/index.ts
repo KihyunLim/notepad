@@ -26,10 +26,15 @@ export type TNotepadAction =
 
 export type TNotepadDispatch = Dispatch<TNotepadAction>;
 
+/* axios response */
 interface IResponse {
   message: string;
 };
 
 export interface IResponse_NoteList extends IResponse {
   noteList: TNoteList;
+}
+
+export interface IResponse_BookmarkList extends IResponse {
+  bookmarkList: TBookmarkList;
 }
