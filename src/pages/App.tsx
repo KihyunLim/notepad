@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Auth } from "aws-amplify";
 import { customAxois as axios } from "@/src/util/axios";
-import { IResponse_NoteList, IResponse_BookmarkList } from '@/src/typeDefinition';
+import { IResponse_NoteList, IResponse_BookmarkList, EActionType } from '@/src/typeDefinition';
 
 import { ContextApiProvider, useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
 import { AppLayout } from '@/src/components/AppLayout';
@@ -36,7 +36,7 @@ export const App = () => {
       .then(({ data }: { data: IResponse_NoteList }) => {
         console.log('note list done : ', data);
         dispatch({
-          type: 'LOAD_NOTE_LIST',
+          type: EActionType.LOAD_NOTE_LIST,
           noteList: data.noteList,
         });
       })
@@ -47,7 +47,7 @@ export const App = () => {
       .then(({ data }: { data: IResponse_BookmarkList }) => {
         console.log('bookmark list done : ', data);
         dispatch({
-          type: 'LOAD_BOOKMARK_LIST',
+          type: EActionType.LOAD_BOOKMARK_LIST,
           bookmarkList: data.bookmarkList,
         });
       })

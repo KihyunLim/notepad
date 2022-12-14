@@ -18,11 +18,19 @@ export type TBookmarkList = IBookmark[];
 export interface INotepadState {
   bookmarkList: TBookmarkList;
   noteList: TNoteList;
+  showPopupAuth: Boolean;
 };
 
+export enum EActionType {
+  LOAD_NOTE_LIST = 'LOAD_NOTE_LIST',
+  LOAD_BOOKMARK_LIST = 'LOAD_BOOKMARK_LIST',
+  TOGGLE_POPUP_AUTH = 'TOGGLE_POPUP_AUTH',
+}
+
 export type TNotepadAction = 
-  | { type: 'LOAD_NOTE_LIST', noteList: TNoteList }
-  | { type: 'LOAD_BOOKMARK_LIST', bookmarkList: TBookmarkList };
+  | { type: EActionType.LOAD_NOTE_LIST, noteList: TNoteList }
+  | { type: EActionType.LOAD_BOOKMARK_LIST, bookmarkList: TBookmarkList }
+  | { type: EActionType.TOGGLE_POPUP_AUTH };
 
 export type TNotepadDispatch = Dispatch<TNotepadAction>;
 

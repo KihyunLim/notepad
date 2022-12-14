@@ -1,22 +1,28 @@
 import React, { useReducer, createContext, useContext } from "react";
-import { INotepadState, TNotepadDispatch, TNotepadAction } from '@/src/typeDefinition';
+import { INotepadState, TNotepadDispatch, TNotepadAction, EActionType } from '@/src/typeDefinition';
 
 export const NotepadState = createContext<INotepadState | null>(null);
 export const NotepadDispatch = createContext<TNotepadDispatch | null>(() => null);
 
 function reducer(state: INotepadState, action: TNotepadAction): INotepadState {
   switch (action.type) {
-    case 'LOAD_BOOKMARK_LIST': {
+    case EActionType.LOAD_BOOKMARK_LIST: {
       return {
         ...state,
         bookmarkList: action.bookmarkList,
       };
     }
-    case 'LOAD_NOTE_LIST': {
+    case EActionType.LOAD_NOTE_LIST: {
       return {
         ...state,
         noteList: state.noteList.concat(action.noteList)
       };
+    }
+    case EActionType.TOGGLE_POPUP_AUTH: {
+      return {
+        ...state,
+        showPopupAuth: !state.showPopupAuth,
+      }
     }
     default:
       return state;
@@ -27,6 +33,7 @@ export function ContextApiProvider({ children }: { children: React.ReactNode }) 
   const [state, dispatch] = useReducer(reducer, {
     bookmarkList: [],
     noteList: [],
+    showPopupAuth: false,
   });
 
   return (

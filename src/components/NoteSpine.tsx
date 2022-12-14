@@ -1,7 +1,10 @@
 import React, { useState, useEffect }  from "react";
 import { NavLink } from "react-router-dom";
+import { useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
+import { EActionType } from '@/src/typeDefinition';
 
 export const NoteSpine = () => {
+  const dispatch = useNotepadDispatch();
   const [buttonWrite, setButtonWrite] = useState(true);
   const [buttonSave, setButtonSave] = useState(false);
   const [buttonDelete, setButtonDelete] = useState(false);
@@ -33,6 +36,9 @@ export const NoteSpine = () => {
       setButtonMenuLIst2(false);
     }
   }
+  const showPopup = () => {
+    dispatch({ type: EActionType.TOGGLE_POPUP_AUTH });
+  }
 
   useEffect(() => {
     setButtonDisplay();
@@ -46,7 +52,7 @@ export const NoteSpine = () => {
   return (
     <header className="note-spine">
       <div className="note-spine__side">
-        <div className="svg svg-gear-solid" id="showPopupSetting"><span>설정</span></div>
+        <div className="svg svg-gear-solid" onClick={showPopup}><span>설정</span></div>
       </div>
       <div className="note-spine__title" id="title">lkh's notepad</div>
       <div className="note-spine__side note-spine__side__right">
