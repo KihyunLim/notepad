@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Auth } from "aws-amplify";
 import { customAxois as axios } from "@/src/util/axios";
 import { IResponse_NoteList, IResponse_BookmarkList, EActionType } from '@/src/typeDefinition';
+import { awsAmplify } from "@/src/util/aws";
 
 import { ContextApiProvider, useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
 import { AppLayout } from '@/src/components/AppLayout';
@@ -12,16 +12,10 @@ export const App = () => {
   // useEffect에서 async/await 쓰는 법
   useEffect(() => {
     (async () => {
-      let user = null;
-
       try {
-        user = await Auth.currentAuthenticatedUser();
+        const result = await awsAmplify.getTokenInfo();
 
-        if (user) {
-          console.log('authenticated user : ', user);
-        } else {
-          console.log('unauthenticated user!!');
-        }
+        console.log('token state :', result);
       } catch (error) {
         console.error(error);
       }
