@@ -5,6 +5,8 @@ export const NotepadState = createContext<INotepadState | null>(null);
 export const NotepadDispatch = createContext<TNotepadDispatch | null>(() => null);
 
 function reducer(state: INotepadState, action: TNotepadAction): INotepadState {
+  console.log('@@@@@ reducer : ', state, ' / ', action);
+
   switch (action.type) {
     case EActionType.LOAD_BOOKMARK_LIST: {
       return {
@@ -21,7 +23,25 @@ function reducer(state: INotepadState, action: TNotepadAction): INotepadState {
     case EActionType.TOGGLE_POPUP_AUTH: {
       return {
         ...state,
-        showPopupAuth: !state.showPopupAuth,
+        showPopup: {
+          ...state.showPopup,
+          showPopupAuth: !state.showPopup.showPopupAuth
+        },
+      }
+    }
+    case EActionType.TOGGLE_POPUP_BOOKMARK: {
+      return {
+        ...state,
+        showPopup: {
+          ...state.showPopup,
+          showPopupBookmark: !state.showPopup.showPopupBookmark
+        },
+      }
+    }
+    case EActionType.SET_TOKEN_INFO: {
+      return {
+        ...state,
+        tokenInfo: action.tokenInfo,
       }
     }
     default:
@@ -30,11 +50,15 @@ function reducer(state: INotepadState, action: TNotepadAction): INotepadState {
 }
 
 export function ContextApiProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(reducer, ({
     bookmarkList: [],
     noteList: [],
-    showPopupAuth: false,
-  });
+    showPopup: {
+      showPopupAuth: false,
+      showPopupBookmark: false,
+    },
+    tokenInfo: null,
+  } as INotepadState));
 
   return (
     <NotepadState.Provider value={state}>

@@ -1,5 +1,6 @@
 import { Amplify, Auth }  from "aws-amplify";
 import { CognitoUser } from 'amazon-cognito-identity-js';
+import { ITokenInfo } from '@/src/typeDefinition';
 
 class AwsAmplify {
   // private email: string;
@@ -21,7 +22,11 @@ class AwsAmplify {
   }
 
   async signin(email: string, password: string) {
-    let result: any = undefined;
+    let response:ITokenInfo = {
+      iat: 0,
+      exp: 0,
+      available: false,
+    };
 
     /**
      * signIn
@@ -29,19 +34,21 @@ class AwsAmplify {
      */
     try {
       console.log(email, password);
-      result = await Auth.signIn(email, password);
-      console.log(result);
+      let responseSignIn = await Auth.signIn(email, password);
+      console.log(responseSignIn);
 
-      if (result.challengeName === 'NEW_PASSWORD_REQUIRED') {
-        result = await Auth.completeNewPassword(result, process.env.COGNITO_NEW_PASSWORD as string);
-        console.log('resultNewPassword : ', result);
+      if (responseSignIn.challengeName === 'NEW_PASSWORD_REQUIRED') {
+        responseSignIn = await Auth.completeNewPassword(responseSignIn, process.env.COGNITO_NEW_PASSWORD as string);
+        console.log('responseSignIn NewPassword : ', responseSignIn);
       }
 
-      const tokenState = await this.getTokenInfo();
-      console.log('token state :', tokenState);
+      response = await this.getTokenInfo();
+      console.log('token state :', response);
     } catch(error) {
       console.log(error);
     }
+
+    return response;
 
     /**
      * currentCredentials
@@ -91,16 +98,16 @@ class AwsAmplify {
      * currentAuthenticatedUser
      * return : CognitoUser
      */
-    try {
+    /* try {
       const temp5 = await Auth.currentAuthenticatedUser();
       console.log('currentAuthenticatedUser : ', temp5);
     } catch(error) {
       console.log('currentAuthenticatedUser e : ', error);
-    }
+    } */
   }
 
   async getTokenInfo() {
-    const result = {
+    const result:ITokenInfo = {
       iat: 0,
       exp: 0,
       available: false,

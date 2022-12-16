@@ -13,14 +13,20 @@ export const DimLayer = () => {
   const [showPopupBookmark, setShowPopupBookmark] = useState(false);
 
   useEffect(() => {
-    if (notepadState.showPopupAuth) {
+    const { showPopupAuth, showPopupBookmark} = notepadState.showPopup;
+
+    debugger;
+    if (showPopupAuth) {
       setShowPopup(true);
       setShowPopupAuth(true);
+    } if (showPopupBookmark) {
+      setShowPopup(true);
+      setShowPopupBookmark(true);
     } else {
       setShowPopup(false);
       setShowPopupAuth(false);
     }
-  }, [notepadState.showPopupAuth]);
+  }, [notepadState.showPopup]);
   
   return (
     <div className={`dim-layer ${showPopup ? 'dimmed' : ''}`}>

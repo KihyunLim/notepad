@@ -15,7 +15,11 @@ export const App = () => {
       try {
         const result = await awsAmplify.getTokenInfo();
 
-        console.log('token state :', result);
+        console.log('token state :', new Date(result.iat), ' ~ ', new Date(result.exp), ' >>> ', result.available);
+        dispatch({
+          type: EActionType.SET_TOKEN_INFO,
+          tokenInfo: result,
+        });
       } catch (error) {
         console.error(error);
       }
@@ -23,7 +27,7 @@ export const App = () => {
   }, []);
 
   // useEffect에서 then으로 사용하는 법
-  useEffect(() => {
+  /* useEffect(() => {
     console.log('App.tsx loaded!!');
 
     axios.get('/note-list')
@@ -48,7 +52,7 @@ export const App = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, []); */
 
   return (
     <ContextApiProvider>

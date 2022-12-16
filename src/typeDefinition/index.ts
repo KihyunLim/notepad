@@ -18,21 +18,36 @@ export type TBookmarkList = IBookmark[];
 export interface INotepadState {
   bookmarkList: TBookmarkList;
   noteList: TNoteList;
-  showPopupAuth: Boolean;
+  showPopup: {
+    showPopupAuth: Boolean;
+    showPopupBookmark: Boolean;
+  }
+  tokenInfo: ITokenInfo | null;
 };
 
 export enum EActionType {
   LOAD_NOTE_LIST = 'LOAD_NOTE_LIST',
   LOAD_BOOKMARK_LIST = 'LOAD_BOOKMARK_LIST',
   TOGGLE_POPUP_AUTH = 'TOGGLE_POPUP_AUTH',
+  TOGGLE_POPUP_BOOKMARK = 'TOGGLE_POPUP_BOOKMARK',
+  SET_TOKEN_INFO = 'SET_TOKEN_INFO',
 }
 
 export type TNotepadAction = 
   | { type: EActionType.LOAD_NOTE_LIST, noteList: TNoteList }
   | { type: EActionType.LOAD_BOOKMARK_LIST, bookmarkList: TBookmarkList }
-  | { type: EActionType.TOGGLE_POPUP_AUTH };
+  | { type: EActionType.TOGGLE_POPUP_AUTH }
+  | { type: EActionType.TOGGLE_POPUP_BOOKMARK }
+  | { type: EActionType.SET_TOKEN_INFO, tokenInfo: ITokenInfo | null }
+;
 
 export type TNotepadDispatch = Dispatch<TNotepadAction>;
+
+export interface ITokenInfo {
+  iat: number;
+  exp: number;
+  available: boolean;
+}
 
 /* axios response */
 interface IResponse {

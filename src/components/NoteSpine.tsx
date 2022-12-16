@@ -1,10 +1,12 @@
 import React, { useState, useEffect }  from "react";
 import { NavLink } from "react-router-dom";
-import { useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
-import { EActionType } from '@/src/typeDefinition';
+import { useNotepadDispatch, useNotepadState } from "@/src/contextApi/ContextApiProvider";
+import { EActionType, ITokenInfo } from '@/src/typeDefinition';
 
 export const NoteSpine = () => {
   const dispatch = useNotepadDispatch();
+  const notepadState = useNotepadState();
+  const [tokenInfo, setTokenInfo] = useState<ITokenInfo | null>(null);
   const [buttonWrite, setButtonWrite] = useState(true);
   const [buttonSave, setButtonSave] = useState(false);
   const [buttonDelete, setButtonDelete] = useState(false);
@@ -37,7 +39,13 @@ export const NoteSpine = () => {
     }
   }
   const showPopup = () => {
-    dispatch({ type: EActionType.TOGGLE_POPUP_AUTH });
+    console.log('hihi', tokenInfo);
+    if (tokenInfo?.available) {
+      console.log('@@@@@@@@@@@@@@@ token is available!!');
+      dispatch({ type: EActionType.TOGGLE_POPUP_BOOKMARK });
+    } else {
+      dispatch({ type: EActionType.TOGGLE_POPUP_AUTH });
+    }
   }
 
   useEffect(() => {
@@ -48,6 +56,11 @@ export const NoteSpine = () => {
       window.removeEventListener('resize', setButtonDisplay);
     }
   }, []);
+
+  useEffect(() => {
+    console.log('detect change token info : ', notepadState);
+    setTokenInfo(notepadState.tokenInfo);
+  }, [notepadState.tokenInfo]);
 
   return (
     <header className="note-spine">
