@@ -21,7 +21,7 @@ class AwsAmplify {
     });
   }
 
-  async signin(email: string, password: string) {
+  async signIn(email: string, password: string) {
     let response:ITokenInfo = {
       iat: 0,
       exp: 0,
@@ -104,6 +104,10 @@ class AwsAmplify {
     } catch(error) {
       console.log('currentAuthenticatedUser e : ', error);
     } */
+  }
+
+  signOut() {
+    Auth.signOut();
   }
 
   async getTokenInfo() {

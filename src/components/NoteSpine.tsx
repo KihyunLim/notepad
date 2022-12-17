@@ -41,7 +41,6 @@ export const NoteSpine = () => {
   const showPopup = () => {
     console.log('hihi', tokenInfo);
     if (tokenInfo?.available) {
-      console.log('@@@@@@@@@@@@@@@ token is available!!');
       dispatch({ type: EActionType.TOGGLE_POPUP_BOOKMARK });
     } else {
       dispatch({ type: EActionType.TOGGLE_POPUP_AUTH });

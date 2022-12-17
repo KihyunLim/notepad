@@ -1,11 +1,18 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
+import { EActionType } from '@/src/typeDefinition';
 
 export const PopupBookmark = () => {
+  const dispatch = useNotepadDispatch();
+  const closePopup = () => {
+    dispatch({ type: EActionType.TOGGLE_POPUP_BOOKMARK });
+  }
+
   return (
-    <div className="popup popup_type--bookmark hide" id="popupBookmark">
+    <div className="popup popup_type--bookmark">
       <div className="popup__header">
         <div className="popup__title">Change bookmark order</div>
-        <div className="popup__close closePopup"></div>
+        <div className="popup__close closePopup" onClick={closePopup}></div>
       </div>
       <div className="popup__body">
         <div className="bookmark__list">

@@ -13,13 +13,12 @@ export const DimLayer = () => {
   const [showPopupBookmark, setShowPopupBookmark] = useState(false);
 
   useEffect(() => {
-    const { showPopupAuth, showPopupBookmark} = notepadState.showPopup;
+    const { showPopupAuth, showPopupBookmark } = notepadState.showPopup;
 
-    debugger;
     if (showPopupAuth) {
       setShowPopup(true);
       setShowPopupAuth(true);
-    } if (showPopupBookmark) {
+    } else if (showPopupBookmark) {
       setShowPopup(true);
       setShowPopupBookmark(true);
     } else {

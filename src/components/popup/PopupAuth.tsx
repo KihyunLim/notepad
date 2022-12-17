@@ -14,13 +14,15 @@ export const PopupAuth = () => {
   }
   const requestSignin = async () => {
     try {
-      const response = await awsAmplify.signin((process.env.COGNITO_USER_EMAIL as string) , password);
+      const response = await awsAmplify.signIn((process.env.COGNITO_USER_EMAIL as string) , password);
 
       console.log('token state :', new Date(response.iat), ' ~ ', new Date(response.exp), ' >>> ', response.available);
       dispatch({
         type: EActionType.SET_TOKEN_INFO,
         tokenInfo: response,
       });
+      dispatch({ type: EActionType.TOGGLE_POPUP_AUTH });
+      dispatch({ type: EActionType.TOGGLE_POPUP_BOOKMARK });
     } catch(error) {
       console.error(error);
     }
