@@ -1,16 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { TBookmarkList } from '@/src/typeDefinition'
-import { StateNotepad } from '@/src/pages/App';
+import { useNotepadState } from '@/src/contextApi/ContextApiProvider';
 
 export const Note = () => {
   const [bookmarkList, setBookmarkList] = useState<TBookmarkList>([]);
-  const stateNotepad = useContext(StateNotepad);
+  const notepadState = useNotepadState();
 
   useEffect(() => {
-    console.log('detect change bookmark list : ', stateNotepad);
-    setBookmarkList(stateNotepad.bookmarkList);
-  }, [stateNotepad.bookmarkList]);
+    console.log('detect change bookmark list : ', notepadState);
+    setBookmarkList(notepadState.bookmarkList);
+  }, [notepadState.bookmarkList]);
   
   return (
     <section className="note">
