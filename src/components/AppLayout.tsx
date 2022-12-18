@@ -37,7 +37,7 @@ export const AppLayout = () => {
   }, []);
 
   // useEffect에서 then으로 사용하는 법
-  /* useEffect(() => {
+  useEffect(() => {
     console.log('App.tsx loaded!!');
 
     axios.get('/note-list')
@@ -62,7 +62,7 @@ export const AppLayout = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []); */
+  }, []);
 
   return (
     <>
