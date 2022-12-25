@@ -12,6 +12,7 @@ export interface IBookmark {
   bm_id: number;
   color: string;
   bm_name: string;
+  bm_order: number;
 };
 export type TBookmarkList = IBookmark[];
 
@@ -47,6 +48,14 @@ export interface ITokenInfo {
   iat: number;
   exp: number;
   available: boolean;
+}
+
+export interface IPalette {
+  [Key: number | string]: {
+    show: boolean,
+    top: number,
+    left: number,
+  }
 }
 
 /* axios response */
