@@ -1,17 +1,21 @@
 import * as React from "react";
 
 interface props {
+  itemColor: number | string,
   top: number,
   left: number,
+  closePalette: Function,
 }
 
-export const Palette = ({ top = 0, left = 0 }: props) => {
+export const Palette = ({ itemColor, top = 0, left = 0, closePalette }: props) => {
   const style:React.CSSProperties = {
     top: top + 'px',
     left: left + 'px',
   }
-  const selectColor = (e:any) => {
-    console.log(e);
+  const selectColor = (e: React.MouseEvent) => {
+    const target = e.target as HTMLDivElement;
+    
+    closePalette(itemColor, target.classList[0]);
   }
   
   return (
