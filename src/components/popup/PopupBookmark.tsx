@@ -1,38 +1,59 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNotepadState, useNotepadDispatch } from "@/src/contextApi/ContextApiProvider";
-import { TBookmarkList, EActionType, IPalette } from '@/src/typeDefinition';
+import { TBookmarkList, EActionType, TPalette, IPaletteItem } from '@/src/typeDefinition';
 
 import { Palette } from './Palette';
 
 export const PopupBookmark = () => {
   const notepadState = useNotepadState();
   const dispatch = useNotepadDispatch();
+  const [newPalette, setNewPalette] = useState<IPaletteItem>({
+    show: false,
+    top: 0,
+    left: 0,
+    selectedColor: '',
+  });
+  const [palette, setPalette] = useState<TPalette>([]);
   const [bookmarkList, setBookmarkList] = useState<TBookmarkList>([]);
-  const [palette, setPalette] = useState<IPalette>({});
   const refNewPalette = useRef<null | HTMLDivElement>(null);
   // const refPalette = useRef([]);
   const closePopup = () => {
     dispatch({ type: EActionType.TOGGLE_POPUP_BOOKMARK });
   }
-  const showPalette = (itemColor: number | string, e: React.MouseEvent) => {
+  const showPalette = (indexBookmark: number | string, e: React.MouseEvent) => {
     const target = e.target as HTMLDivElement;
-    setPalette({ 
-      ...palette, 
-      [itemColor]: {
+
+    if (indexBookmark === 'new') {
+      setNewPalette({
         show: true,
         top: target.getBoundingClientRect().top + 40,
         left: target.getBoundingClientRect().left,
         selectedColor: '',
-      } 
-    });
+      });
+    } else {
+      const changedPalette = palette.map((item, i) => {
+        if (i === indexBookmark) {
+          return {
+            show: true,
+            top: target.getBoundingClientRect().top + 40,
+            left: target.getBoundingClientRect().left,
+            selectedColor: '',
+          }
+        } else {
+          return item;
+        }
+      });
+
+      setPalette(changedPalette);
+    }
   }
-  const closePalette = (itemColor: number | string, selectedColor: string) => {
-    console.log(itemColor, selectedColor);
+  const closePalette = (indexPalette: number | string, selectedColor: string) => {
+    console.log(indexPalette, selectedColor);
     // refNewPalette.current?.classList = 'bookmark__color ' + selectedColor;
     // setPalette({ 
     //   ...palette, 
-    //   [itemColor]: {
-    //     ...palette[itemColor],
+    //   [indexPalette]: {
+    //     ...palette[indexPalette],
     //     selectedColor: selectedColor,
     //   } 
     // });
@@ -42,11 +63,12 @@ export const PopupBookmark = () => {
     console.log('detect change bookmark list : ', notepadState);
     setBookmarkList(notepadState.bookmarkList);
 
-    const tempPalette:IPalette = { '-1': { show: false, top: 0, left: 0, selectedColor: '', } };
-    bookmarkList.forEach((v, i) => {
-      tempPalette[i] = { show: false, top: 0, left: 0, selectedColor: '', };
-    });
-    setPalette(tempPalette);
+    setPalette(bookmarkList.map(() => ({
+      show: false,
+      top: 0,
+      left: 0,
+      selectedColor: '',
+    })));
   }, [notepadState.bookmarkList]);
 
   return (
@@ -59,10 +81,13 @@ export const PopupBookmark = () => {
         <div className="bookmark__list">
         {bookmarkList.map((bookmark, i) => (
           <div className="bookmark__item bookmarkItem">
-            <div className={`bookmark__color palette__color--${bookmark.color}`}></div>
+            <div 
+              className={`bookmark__color palette__color--${bookmark.color}`}
+              onClick={showPalette.bind(this, i)}
+            ></div>
           { palette[i]?.show && (
             <Palette 
-              itemColor={i} 
+              indexPalette={i} 
               top={palette[i].top} 
               left={palette[i].left} 
               closePalette={closePalette}
@@ -78,14 +103,14 @@ export const PopupBookmark = () => {
         <div className="bookmark__item bookmarkItem">
           <div 
             className="bookmark__color palette__color--deep-red" 
-            onClick={showPalette.bind(this, '-1')}
+            onClick={showPalette.bind(this, 'new')}
             ref={refNewPalette}
           ></div>
-        { palette['-1']?.show && (
+        { newPalette?.show && (
           <Palette 
-            itemColor='-1' 
-            top={palette['-1'].top} 
-            left={palette['-1'].left} 
+            indexPalette='new' 
+            top={newPalette.top} 
+            left={newPalette.left} 
             closePalette={closePalette}
           />) 
         }

@@ -50,14 +50,13 @@ export interface ITokenInfo {
   available: boolean;
 }
 
-export interface IPalette {
-  [Key: number | string]: {
-    show: boolean,
-    top: number,
-    left: number,
-    selectedColor: string,
-  }
+export interface IPaletteItem {
+  show: boolean,
+  top: number,
+  left: number,
+  selectedColor: string,
 }
+export type TPalette = IPaletteItem[];
 
 /* axios response */
 interface IResponse {
