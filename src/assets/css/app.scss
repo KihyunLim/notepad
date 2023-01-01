@@ -122,10 +122,10 @@ body {
   // font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Nanum Pen Script', cursive;
 
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &::-webkit-scrollbar {
     display: none;
