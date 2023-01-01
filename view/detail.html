@@ -7,44 +7,46 @@
   <title>notepad</title>
 </head>
 <body>
-  <header class="note-spine">
-    <div class="note-spine__side">
-    </div>
-    <div class="note-spine__title">lkh's notepad</div>
-    <div class="note-spine__side note-spine__side__right">
-      <div class="svg svg-pen-to-square-solid wide-screen"><span>수정</span></div>
-      <div class="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
-      <div class="svg svg-bars-solid" id="showMenu"><span>메뉴</span></div>
-      <div class="svg svg-xmark-solid-white" id="hideMenu"><span>닫기</span></div>
-      <div class="menu-list menu-list__type--menu hide">
-        <div class="menu">
-          <div class="svg svg-pen-to-square-solid wide-screen"><span>수정</span></div>
-          <div class="menu__name">글 수정</div>
+  <div class="note-container">
+    <header class="note-spine">
+      <div class="note-spine__side">
+      </div>
+      <div class="note-spine__title">lkh's notepad</div>
+      <div class="note-spine__side note-spine__side__right">
+        <div class="svg svg-pen-to-square-solid wide-screen"><span>수정</span></div>
+        <div class="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
+        <div class="svg svg-bars-solid" id="showMenu"><span>메뉴</span></div>
+        <div class="svg svg-xmark-solid-white" id="hideMenu"><span>닫기</span></div>
+        <div class="menu-list menu-list__type--menu hide">
+          <div class="menu">
+            <div class="svg svg-pen-to-square-solid wide-screen"><span>수정</span></div>
+            <div class="menu__name">글 수정</div>
+          </div>
+          <div class="menu">
+            <div class="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
+            <div class="menu__name">글 삭제</div>
+          </div>
         </div>
-        <div class="menu">
-          <div class="svg svg-trash-can-solid-white wide-screen"><span>삭제</span></div>
-          <div class="menu__name">글 삭제</div>
+      </div>
+    </header>
+    
+    <section class="note">
+      <aside class="bookmark__list">
+        <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
+        <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+        <div class="bookmark bookmark__color--green">선택 아님2</div>
+      </aside>
+      <article class="detail-wrap">
+        <div class="detail__head">
+          <div class="title">제목</div>
+          <div class="regist-date">2022-09-25</div>
         </div>
-      </div>
-    </div>
-  </header>
-  
-  <section class="note">
-    <aside class="bookmark__list">
-      <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
-      <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
-      <div class="bookmark bookmark__color--green">선택 아님2</div>
-    </aside>
-    <article class="detail-wrap">
-      <div class="detail__head">
-        <div class="title">제목</div>
-        <div class="regist-date">2022-09-25</div>
-      </div>
-      <hr>
-      <div class="detail__content">
-        <div class="content">본문 영역</div>
-      </div>
-    </article>
-  </section>
+        <hr>
+        <div class="detail__content">
+          <div class="content">본문 영역</div>
+        </div>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
