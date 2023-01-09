@@ -9,208 +9,35 @@
 <body>
   <div class="note__container">
     <header class="note__spine">
-      <div style="color:white;">header</div>
+      <div class="spine__side">
+        <button type="button" class="svg svg--gear-solid" id="showPopupSetting"><span>설정</span></button>
+      </div>
+      <div class="spine__title" id="title">lkh's notepad</div>
+      <div class="spine__side spine__side--right">
+        <button type="button" class="svg svg--pen-to-square-solid wide-screen moveWriteNote"><span>작성</span></button>
+        <button type="button" class="svg svg--floppy-disk-solid" id="saveNote"><span>저장</span></button>
+        <button type="button" class="svg svg--trash-can-solid-white wide-screen"><span>삭제</span></button>
+        <button type="button" class="svg svg--bars-solid" id="showMenu"><span>메뉴</span></button>
+        <button type="button" class="svg svg--xmark-solid-white" id="hideMenu"><span>닫기</span></button>
+        <div class="menu-list menu-list__type--menu hide" id="menuMain">
+          <div class="menu moveWriteNote">
+            <button type="button" class="svg svg--pen-to-square-solid"><span>작성</span></button>
+            <div class="menu__name">새 노트</div>
+          </div>
+          <div class="menu" id="showBookmarkList">
+            <button type="button" class="svg svg--bookmark-solid"><span>북마크</span></button>
+            <div class="menu__name">북마크</div>
+          </div>
+        </div>
+        <div class="menu-list menu-list__type--bookmark hide" id="menuBookmark">
+          <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="bookmark bookmark__color--green">선택 아님2</div>
+        </div>
+      </div>
     </header>
 
     <section class="note__body">
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
-      <div>note__body</div>
     </section>
   </div>
 

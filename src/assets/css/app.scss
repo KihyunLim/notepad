@@ -12,6 +12,29 @@ $palette__color--deep-blue: #002060;
 $palette__color--puple: #7030A0;
 $palette__color--grey: #919192;
 
+@mixin hidden-text {
+  position:absolute !important;  
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip:rect(1px, 1px, 1px, 1px);
+}
+@mixin svg {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+
+  span {
+    @include hidden-text;
+  }
+}
+
 body {
   font-family: 'Nanum Pen Script', cursive;
   -webkit-user-select: none;
@@ -29,7 +52,7 @@ input[type=text],input[type=password],select {
   box-sizing: border-box;
   padding-left: 0.4rem;//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
-button[type=button] {
+button[type=button].btn {
   background-color: #C8C371;
   border: 0;
   border-radius: 5px;
@@ -78,5 +101,47 @@ hr {
     background-size: 100%;
     background-repeat: repeat-y;
     overflow-y:scroll;
+  }
+}
+.note__spine > .spine__title {
+  flex: 2 1 50%;
+  color: grey;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.note__spine > .spine__side {
+  flex: 1 2 25%;
+  position: relative;
+  display: flex;
+
+  &.spine__side--right {
+    justify-content: end;
+  }
+
+  .svg {
+    @include svg;
+
+    &.svg--gear-solid {
+      background-image: url(/src/assets/img/icon/gear-solid.svg);
+    }
+    &.svg--pen-to-square-solid {
+      background-image: url(/src/assets/img/icon/pen-to-square-solid.svg);
+    }
+    &.svg--floppy-disk-solid {
+      background-image: url(/src/assets/img/icon/floppy-disk-solid.svg);
+    }
+    &.svg--trash-can-solid-white {
+      background-image: url(/src/assets/img/icon/trash-can-solid-white.svg);
+    }
+    &.svg--bars-solid {
+      background-image: url(/src/assets/img/icon/bars-solid.svg);
+    }
+    &.svg--xmark-solid-white {
+      background-image: url(/src/assets/img/icon/xmark-solid-white.svg);
+    }
+    &.svg--bookmark-solid {
+      background-image: url(/src/assets/img/icon/bookmark-solid.svg);
+    }
   }
 }
