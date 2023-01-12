@@ -14,14 +14,13 @@
       </div>
       <div class="spine__title" id="title">lkh's notepad</div>
       <div class="spine__side spine__side--right">
-        <a href="" class="aIcon"><img alt="" class="svg--pen-to-square-solid" /></a>
-        <button type="button" class="btnIcon svg--pen-to-square-solid wide-screen moveWriteNote"></button>
+        <a href="" class="aIcon wide-screen moveWriteNote"><img alt="" class="svg--pen-to-square-solid" /></a>
         <button type="button" class="btnIcon svg--floppy-disk-solid" id="saveNote"></button>
         <button type="button" class="btnIcon svg--trash-can-solid-white wide-screen"></button>
         <button type="button" class="btnIcon svg--bars-solid" id="showMenu"></button>
         <button type="button" class="btnIcon svg--xmark-solid-white" id="hideMenu"></button>
         <div class="menu-list menu-list__type--menu hide" id="menuMain">
-          <div class="menu moveWriteNote">
+          <div class="menu moveWriteNote">  <!-- div -> button / button -> div -->
             <button type="button" class="btnIcon svg--pen-to-square-solid"></button>
             <div class="menu__name">새 노트</div>
           </div>
@@ -39,6 +38,231 @@
     </header>
 
     <section class="note__body">
+      <aside class="bookmark__list">
+        <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
+        <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+        <div class="bookmark bookmark__color--green">선택 아님2</div>
+      </aside>
+      <article class="post__grid">
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <!-- 태그는 당장 필요는 없을 듯 -->
+            <!-- <div class="tag">
+              <ul class="tag__list">
+                <li class="tag__item">asdf</li>
+                <li class="tag__item">qwer</li>
+                <li class="tag__item">zxcv</li>
+              </ul>
+            </div> -->
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+        <div class="post__cell">
+          <a class="post">
+            <div class="post__title">제목</div>
+            <div class="post__thumbnail">
+              <img src="/src/assets/img/sample/sample1.jpg" alt="" onerror="this.style.display='none';">
+            </div>
+            <div class="post__content">
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 내용내뇨용 
+              내용내뇨용 내용내뇨용 내용내뇨용 
+            </div>
+            <div class="post__regist-date">2022-09-25</div>
+          </a>
+        </div>
+      </article>
     </section>
   </div>
 

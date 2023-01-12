@@ -36,6 +36,55 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   width: 24px;
   height: 24px;
 }
+@mixin bookmark {
+  width: 80%;
+  max-width: 80%;
+  height: 1.6rem;
+  /* https://bennettfeely.com/clippy/ */
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+  color: white;
+  padding-left: 13%;
+  line-height: 1.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+
+  &.bookmark__selected {
+    max-width: 100%;
+    width: 100%;
+  }
+  &.bookmark__color--deep-red {
+    background: $palette__color--deep-red;
+  }
+  &.bookmark__color--red {
+    background: $palette__color--red;
+  }
+  &.bookmark__color--orrange {
+    background: $palette__color--orrange;
+  }
+  &.bookmark__color--light-green {
+    background: $palette__color--light-green;
+  }
+  &.bookmark__color--green {
+    background: $palette__color--green;
+  }
+  &.bookmark__color--light-blue {
+    background: $palette__color--light-blue;
+  }
+  &.bookmark__color--blue {
+    background: $palette__color--blue;
+  }
+  &.bookmark__color--deep-blue {
+    background: $palette__color--deep-blue;
+  }
+  &.bookmark__color--puple {
+    background: $palette__color--puple;
+  }
+  &.bookmark__color--grey {
+    background: $palette__color--grey;
+  }
+}
 
 body {
   font-family: 'Nanum Pen Script', cursive;
@@ -109,12 +158,14 @@ hr {
   user-select:all
 }
 
+// 노트
 .note__container {
   width: 100%;
   height: 100%;
   position: relative;
   font-size: 20px;
   
+  // 노트등
   .note__spine {
     width: 100%;
     height: 35px;
@@ -122,14 +173,12 @@ hr {
     top: 0;
     z-index: 90;
     background-color: black;
-    display: flex;
-    align-items: center;
   }
+  // 노트 컨텐츠
   .note__body {
     height: calc(100% - 35px);
     top: 35px;
     position: relative;
-    // display: flex;
 
     background: url(/src/assets/img/index/LegalPad_index_endMark.png);
     background-size: 100%;
@@ -137,19 +186,116 @@ hr {
     overflow-y:scroll;
   }
 }
-.note__spine > .spine__title {
-  flex: 2 1 50%;
-  color: grey;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
+// 노트등
+.note__spine {
+  display: flex;
+  align-items: center;
+
+  .spine__title {
+    flex: 2 1 50%;
+    color: grey;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .spine__side {
+    flex: 1 2 25%;
+    position: relative;
+    display: flex;
+  
+    &.spine__side--right {
+      justify-content: end;
+    }
+  }
 }
-.note__spine > .spine__side {
-  flex: 1 2 25%;
-  position: relative;
+// 노트 컨텐츠
+.note__body {
   display: flex;
 
-  &.spine__side--right {
-    justify-content: end;
+  // 북마크 목록
+  .bookmark__list {
+    flex-basis: 10%;
+    max-width: 10%;
+    padding-right: 20px;
+    padding-top: 8px;
+
+    .bookmark {
+      @include bookmark;
+    }
+  }
+  // 글 목록
+  .post__grid {
+    flex-basis: 90%;
+    padding: 0px 20px 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-auto-rows: minmax(0, 350px); */
+    gap: 4px;
+
+    .post__cell {
+      padding: 8px;
+    }
+  }
+}
+.post__cell > .post {
+  display: block;
+  background-color: rgb(252 246 161 / 40%);
+  border: 1px #fcf6a1 solid;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25); 
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
+  padding: 4px;
+  transition: all 0.2s linear;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .post__title {
+    margin-bottom: 6px;
+    font-size: 26px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+  .post__thumbnail {
+    margin-bottom: 6px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  .post__content {
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .post__regist-date {
+    text-align: right;
+  }
+}
+.post__cell > .post > .tag {
+  display: inline-block;
+
+  .tag__list {
+    list-style: none;
+
+    .tag__item {
+      float: left;
+      padding: 2px 8px;
+      margin-right: 8px;
+      background-color: white;
+      border-radius: 20px;
+      line-height: 20px;
+    }
   }
 }
