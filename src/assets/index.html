@@ -14,7 +14,7 @@
       </div>
       <div class="spine__title" id="title">lkh's notepad</div>
       <div class="spine__side spine__side--right">
-        <a href="" class="aIcon wide-screen moveWriteNote"><img alt="" class="svg--pen-to-square-solid" /></a>
+        <a href="/write.html" class="aIcon wide-screen"><img alt="" class="svg--pen-to-square-solid" /></a>
         <button type="button" class="btnIcon svg--floppy-disk-solid" id="saveNote"></button>
         <button type="button" class="btnIcon svg--trash-can-solid-white wide-screen"></button>
         <button type="button" class="btnIcon svg--bars-solid" id="showMenu"></button>
@@ -267,7 +267,7 @@
   </div>
 
   <!-- popup -->
-  <div class="dim-layer" id="dim" style="display:none;">
+  <div class="dim-layer" id="dim">
     <div class="spinner hide" id="loadingSpinner"></div>
     <div class="popup popup__type--auth hide" id="popupAuth">
       <div class="popup__header">
@@ -275,10 +275,10 @@
         <div class="popup__close closePopup"></div>
       </div>
       <div class="popup__body">
-        <input type="password" class="popup__password" placeholder="비밀번호를 입력해주세요.">
+        <input type="password" class="popup__password" placeholder="비밀번호를 입력해주세요." />
       </div>
       <div class="popup__footer">
-        <button type="button" class="buttonOk">확인</button>
+        <button type="button" class="btn buttonOk">확인</button>
       </div>
     </div>
     <div class="popup popup_type--bookmark hide" id="popupBookmark">
@@ -290,7 +290,7 @@
         <div class="bookmark__list">
           <div class="bookmark__item bookmarkItem">
             <div class="bookmark__color selectedColor palette__color--deep-red"></div>
-            <input type="text" class="bookmark__name__type--exist">
+            <input type="text" class="bookmark__name__type--exist" />
             <div class="bookmark__order"></div>
             <div class="bookmark__delete"></div>
           </div>
@@ -303,9 +303,23 @@
         </div>
       </div>
       <div class="popup__footer">
-        <button type="button" class="buttonOk">확인</button>
+        <button type="button" class="btn buttonOk">확인</button>
       </div>
     </div>
   </div>
+
+  <!-- 팔레트 js 생성 -->
+  <!-- <div class="palette" style="display:none;">
+    <div class="palette__color--deep-red"></div>
+    <div class="palette__color--red"></div>
+    <div class="palette__color--orrange"></div>
+    <div class="palette__color--light-green"></div>
+    <div class="palette__color--green"></div>
+    <div class="palette__color--light-blue"></div>
+    <div class="palette__color--blue"></div>
+    <div class="palette__color--deep-blue"></div>
+    <div class="palette__color--puple"></div>
+    <div class="palette__color--grey"></div>
+  </div> -->
 </body>
 </html>
