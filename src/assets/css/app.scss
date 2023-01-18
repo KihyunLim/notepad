@@ -64,7 +64,7 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  word-break: break-all;
+  overflow: hidden;
 
   &.bookmark__selected {
     max-width: 100%;
@@ -265,12 +265,17 @@ hr {
   // 글 목록
   .post__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-auto-rows: minmax(0, 350px); */
+    position: relative;
+    // grid: 350px / 300px;
+    // grid-template-columns: repeat(4, 1fr);
+    // grid-auto-rows: minmax(0, 350px);
+    grid-template-rows: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 300px);
     gap: 4px;
 
     .post__cell {
       padding: 8px;
+      box-sizing: border-box;
     }
   }
   // 노트 작성/수정
@@ -278,7 +283,6 @@ hr {
 }
 // 글 목록
 .post__grid > .post__cell > .post {
-  display: block;
   background-color: rgb(254 253 236 / 40%);
   border: 1px rgb(254 253 236) solid;
   border-radius: 10px;
@@ -286,6 +290,8 @@ hr {
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.25);
   padding: 4px;
   transition: all 0.2s linear;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: scale(1.02);
@@ -297,7 +303,7 @@ hr {
     font-weight: bold;
     white-space: nowrap;
     text-overflow: ellipsis;
-    word-break: break-all;
+    overflow: hidden;
   }
   .post__thumbnail {
     margin-bottom: 6px;
