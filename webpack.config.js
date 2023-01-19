@@ -11,14 +11,14 @@ module.exports = {
       template: 'src/assets/index.html',
       filename : 'index.html',
     }),
-    /* new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: 'view/write.html',
       filename : 'write.html',
     }),
     new HtmlWebpackPlugin({
       template: 'view/detail.html',
       filename : 'detail.html',
-    }), */
+    }),
   ],
   devtool: 'inline-source-map',
   devServer: {

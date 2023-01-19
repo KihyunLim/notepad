@@ -279,7 +279,13 @@ hr {
     }
   }
   // 노트 작성/수정
+  .write-wrap {
+    padding-top: 8px;
+  }
   // 노트 상세
+  .detail-wrap {
+    padding-top: 8px;
+  }
 }
 // 글 목록
 .post__grid > .post__cell > .post {
@@ -292,11 +298,17 @@ hr {
   transition: all 0.2s linear;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   &:hover {
     transform: scale(1.02);
   }
 
+  .post__link {
+    position: absolute;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
   .post__title {
     margin-bottom: 6px;
     font-size: 26px;
@@ -319,6 +331,7 @@ hr {
   }
   .post__content {
     margin-bottom: 4px;
+    min-height: 60px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -613,7 +626,8 @@ hr {
   }
   // 글 목록
   .note__body > .post__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 100%;
+    // grid-template-rows: repeat(auto-fill, 300px);
   }
   // 노트 작성/수정
   .note__body > .write-wrap > .write__bookmark {
