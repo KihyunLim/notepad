@@ -52,6 +52,15 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   width: 26px;
   height: 26px;
 }
+@mixin icon30 {
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
 @mixin bookmark {
   width: 80%;
   max-width: 80%;
@@ -141,7 +150,7 @@ hr {
   display: none !important;
 }
 .btnIcon {
-  @include icon24;
+  @include icon30;
   margin: 0 6px;
   padding: 0px;
   border: 0px;
@@ -155,8 +164,8 @@ hr {
   &.svg--bookmark-solid { background-image: url($svg--bookmark-solid); }
 }
 .aIcon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   margin: 0 6px;
 
   img {
@@ -191,7 +200,7 @@ hr {
   // 노트등
   .note__spine {
     width: 100%;
-    height: 35px;
+    height: 50px;
     position: fixed;
     top: 0;
     z-index: 90;
@@ -199,8 +208,8 @@ hr {
   }
   // 노트 컨텐츠
   .note__body {
-    height: calc(100% - 35px);
-    top: 35px;
+    height: calc(100% - 50px);
+    top: 50px;
     position: relative;
 
     background: url(/src/assets/img/index/LegalPad_index_endMark_1.png);
@@ -228,9 +237,12 @@ hr {
   .spine__title {
     flex: 2 1 50%;
     color: grey;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .spine__side {
     flex: 1 2 25%;
@@ -503,15 +515,15 @@ hr {
   }
   .bookmark__order {
     background: url(/src/assets/img/icon/arrow-up-arrow-down-solid.svg);
-    @include icon26;
+    @include icon30;
   }
   .bookmark__delete {
     background: url(/src/assets/img/icon/trash-can-solid.svg);
-    @include icon26;
+    @include icon30;
   }
   .bookmark__add {
     background: url(/src/assets/img/icon/plus-solid.svg);
-    @include icon26;
+    @include icon30;
   }
 }
 
@@ -587,12 +599,12 @@ hr {
     position: absolute;
     background-color: black;
     border-radius: 5px;
-    top: 33px;
+    top: 45px;
     right: 6px;
     padding: 4px;
   }
   .note__spine > .spine__side > .menu-list.menu-list__type--menu {
-    max-width: 100%;
+    // max-width: 100%;
 
     .menu {
       margin-bottom: 4px;
@@ -608,7 +620,7 @@ hr {
     }
   }
   .note__spine > .spine__side > .menu-list.menu-list__type--bookmark {
-    max-width: 100%;
+    max-width: 170%;
 
     .bookmark {
       @include bookmark;
