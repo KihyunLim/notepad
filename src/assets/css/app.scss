@@ -46,6 +46,7 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   height: 24px;
 }
 @mixin icon26 {
+  background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -181,6 +182,14 @@ hr {
     &.svg--bookmark-solid { content: url($svg--bookmark-solid); }
   }
 }
+.hidden-text {
+  position:absolute !important;  
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+  clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip:rect(1px, 1px, 1px, 1px);
+}
 
 // 노트 영역에서는 드래그 가능
 .draggable {
@@ -293,10 +302,16 @@ hr {
   // 노트 작성/수정
   .write-wrap {
     padding-top: 8px;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
   }
   // 노트 상세
   .detail-wrap {
     padding-top: 8px;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
   }
 }
 // 글 목록
@@ -395,11 +410,11 @@ hr {
   }
 }
 .write-wrap > .write__editor {
+  flex: 1;
+
   .editor-wrap {
-    height: 400px;
+    height: 100%;
     border: solid black 1px;
-    line-height: 400px;
-    text-align: center;
   }
 }
 // 노트 상세
@@ -409,14 +424,16 @@ hr {
     font-weight: bold;
   }
   .regist-date {
-    font-size: 10px;
+    font-size: 20px;
     color: grey;
   }
 }
 .detail-wrap > .detail__content {
+  flex: 1;
+
   .content {
     font-size: 24px;
-    height: 400px;
+    height: 100%;
     border: solid black 1px;
   }
 }
@@ -594,6 +611,9 @@ hr {
   // 노트등
   .note__spine > .spine__side > .wide-screen {
     display: none;
+  }
+  .note__spine > .spine__side > .btnIcon {
+    background-size: 20px auto;
   }
   .note__spine > .spine__side > .menu-list {
     position: absolute;
