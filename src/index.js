@@ -3,6 +3,12 @@ import "/src/assets/css/app.scss";
 console.log('index.js!!');
 
 window.onload = () => {
+  document.querySelectorAll('img').forEach(($item) => {
+    if ($item.src === '' && $item.classList.length === 0) {
+      $item.parentElement.classList.add('hide');
+    }
+  });
+
   const loadedBodyWidth = document.querySelector('body').getBoundingClientRect().width;
   console.log('loadedBodyWidth :', loadedBodyWidth);
   if (loadedBodyWidth <= 800) {

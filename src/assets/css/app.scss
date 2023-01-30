@@ -301,15 +301,17 @@ hr {
   }
   // 노트 작성/수정
   .write-wrap {
+    box-sizing: border-box;
     padding-top: 8px;
-    height: calc(100% - 50px);
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
   // 노트 상세
   .detail-wrap {
+    box-sizing: border-box;
     padding-top: 8px;
-    height: calc(100% - 50px);
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -346,14 +348,13 @@ hr {
   }
   .post__thumbnail {
     margin-bottom: 6px;
-    width: 100%;
-    height: 150px;
+    max-height: 150px;
     display: flex;
     justify-content: center;
 
     img {
-      max-height: 100%;
       object-fit: contain;
+      max-width: 100%;
     }
   }
   .post__content {
