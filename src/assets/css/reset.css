@@ -23,13 +23,23 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+html, body {
+	width: 100vw;
+  height: 100%;
+}
+html {
+  font-size: 16px;
+}
+body {
+	min-height: 100vh;
+	line-height: 1;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-body {
-	line-height: 1;
 }
 a {
 	color: inherit;
