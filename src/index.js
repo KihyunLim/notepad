@@ -49,12 +49,15 @@ window.onload = () => {
   document.querySelector('#hideMenu').addEventListener('click', () => {
     document.querySelector('#hideMenu').classList.add('hide');
     document.querySelector('#menuMain').classList.add('hide');
-    document.querySelector('#menuBookmark').classList.add('hide');
     document.querySelector('#showMenu').classList.remove('hide');
   });
   document.querySelector('#showBookmarkList').addEventListener('click', () => {
+    document.querySelector('#hideMenu').classList.add('hide');
     document.querySelector('#menuMain').classList.add('hide');
-    document.querySelector('#menuBookmark').classList.remove('hide');
+    document.querySelector('#showMenu').classList.remove('hide');
+
+    document.querySelector('#dim').classList.add('dimmed');
+    document.querySelector('#popupBookmarkList').classList.remove('hide');
   });
 
   document.querySelector('#showPopupSetting').addEventListener('click', () => {
