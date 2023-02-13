@@ -28,6 +28,11 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   }
 }
 
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 @mixin hidden-text {
   position:absolute !important;  
   width:1px; 
@@ -61,55 +66,6 @@ $svg--bookmark-solid: '/src/assets/img/icon/bookmark-solid.svg';
   position: relative;
   width: 30px;
   height: 30px;
-}
-@mixin bookmark {
-  width: 80%;
-  max-width: 80%;
-  height: 32px;
-  /* https://bennettfeely.com/clippy/ */
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
-  color: white;
-  padding-left: 13%;
-  line-height: 32px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-
-  &.bookmark__selected {
-    max-width: 100%;
-    width: 100%;
-  }
-  &.bookmark__color--deep-red {
-    background: $palette__color--deep-red;
-  }
-  &.bookmark__color--red {
-    background: $palette__color--red;
-  }
-  &.bookmark__color--orrange {
-    background: $palette__color--orrange;
-  }
-  &.bookmark__color--light-green {
-    background: $palette__color--light-green;
-  }
-  &.bookmark__color--green {
-    background: $palette__color--green;
-  }
-  &.bookmark__color--light-blue {
-    background: $palette__color--light-blue;
-  }
-  &.bookmark__color--blue {
-    background: $palette__color--blue;
-  }
-  &.bookmark__color--deep-blue {
-    background: $palette__color--deep-blue;
-  }
-  &.bookmark__color--puple {
-    background: $palette__color--puple;
-  }
-  &.bookmark__color--grey {
-    background: $palette__color--grey;
-  }
 }
 @mixin palette-color {
   box-sizing: border-box;
@@ -267,16 +223,10 @@ hr {
 .note__body {
   display: flex;
 
-  // 북마크 목록
-  .bookmark__list {
-    flex-basis: 10%;
-    max-width: 10%;
-    padding-right: 20px;
+  .note__left-side {
+    flex-basis: 15%;
+    width: 15%;
     padding-top: 8px;
-
-    .bookmark {
-      @include bookmark;
-    }
   }
 
   > article {
@@ -314,6 +264,62 @@ hr {
     height: 100%;
     display: flex;
     flex-direction: column;
+  }
+}
+// 북마크 목록
+.bookmark__list > .bookmark {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+
+  > div:first-child {
+    flex-basis: 70%;
+    max-width: 70%;
+    padding: 4px 2px;
+    @include ellipsis;
+
+    &.bookmark__selected {
+      flex-basis: 80%;
+      max-width: 80%;
+    }
+    &.bookmark__color--deep-red {
+      background: $palette__color--deep-red;
+    }
+    &.bookmark__color--red {
+      background: $palette__color--red;
+    }
+    &.bookmark__color--orrange {
+      background: $palette__color--orrange;
+    }
+    &.bookmark__color--light-green {
+      background: $palette__color--light-green;
+    }
+    &.bookmark__color--green {
+      background: $palette__color--green;
+    }
+    &.bookmark__color--light-blue {
+      background: $palette__color--light-blue;
+    }
+    &.bookmark__color--blue {
+      background: $palette__color--blue;
+    }
+    &.bookmark__color--deep-blue {
+      background: $palette__color--deep-blue;
+    }
+    &.bookmark__color--puple {
+      background: $palette__color--puple;
+    }
+    &.bookmark__color--grey {
+      background: $palette__color--grey;
+    }
+  }
+  > div:last-child {
+    flex-basis: 15%;
+    width: 15%;
+    background: #e4e4e4;
+    opacity: 85%;
   }
 }
 // 글 목록
@@ -505,7 +511,7 @@ hr {
   margin: 0 40%;
   width: 100%;
 }
-.dim-layer > .popup.popup_type--bookmark {
+.dim-layer > .popup.popup_type--bookmark-manage {
   margin-left: 30%;
   margin-right: 30%;
   width: 100%;
@@ -515,7 +521,7 @@ hr {
     width: 90%;
   }
 }
-.dim-layer > .popup.popup_type--bookmark .bookmark__item {
+.dim-layer > .popup.popup_type--bookmark-manage .bookmark__item {
   position: relative;
   display: flex;
   align-items: center;
@@ -545,6 +551,16 @@ hr {
   .bookmark__add {
     background: url(/src/assets/img/icon/plus-solid.svg);
     @include icon30;
+  }
+}
+.dim-layer > .popup.popup_type--bookmark-list {
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 100%;
+
+  .popup__body {
+    padding: 0 5%;
+    width: 90%;
   }
 }
 
@@ -643,21 +659,8 @@ hr {
       }
     }
   }
-  .note__spine > .spine__side > .menu-list.menu-list__type--bookmark {
-    max-width: 170%;
-
-    .bookmark {
-      @include bookmark;
-      text-align: start;
-
-      &.bookmark__selected {
-        width: 90%;
-        max-width: 90%;
-      }
-    }
-  }
   // 북마크
-  .note__body > .bookmark__list {
+  .note__body > .note__left-side {
     display: none;
   }
   // 글 목록
@@ -680,8 +683,11 @@ hr {
       &.popup__type--auth {
         margin: 0 20%;
       }
-      &.popup_type--bookmark {
+      &.popup_type--bookmark-manage {
         margin: 0 5%;
+      }
+      &.popup_type--bookmark-list {
+        margin: 0 20%;
       }
     }
   }

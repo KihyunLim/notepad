@@ -29,19 +29,25 @@
             <div class="menu__name">북마크</div>
           </div>
         </div>
-        <div class="menu-list menu-list__type--bookmark hide" id="menuBookmark">
-          <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
-          <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
-          <div class="bookmark bookmark__color--green">선택 아님2</div>
-        </div>
       </div>
     </header>
 
     <section class="note__body">
-      <aside class="bookmark__list">
-        <div class="bookmark bookmark__color--red">선택 아님sssssssssssssssssssssssssssssssssssssssss</div>
-        <div class="bookmark bookmark__color--blue bookmark__selected">선택!!sssssssssssssssssssssssssssssssssssssssssssssssssss</div>
-        <div class="bookmark bookmark__color--green">선택 아님2</div>
+      <aside class="note__left-side">
+        <div class="bookmark__list">
+          <div class="bookmark">
+            <div class="bookmark__color--red">선택 아님</div>
+            <div></div>
+          </div>
+          <div class="bookmark">
+            <div class="bookmark__color--green bookmark__selected">선택</div>
+            <div></div>
+          </div>
+          <div class="bookmark">
+            <div class="bookmark__color--blue">일이삼사오육칠팔구십</div>
+            <div></div>
+          </div>
+        </div>
       </aside>
       <article class="post__grid">
         <div class="post__cell">
@@ -256,7 +262,7 @@
         <button type="button" class="btn buttonOk">확인</button>
       </div>
     </div>
-    <div class="popup popup_type--bookmark hide" id="popupBookmark">
+    <div class="popup popup_type--bookmark-manage hide" id="popupBookmark">
       <div class="popup__header">
         <div class="popup__title">Change bookmark order</div>
         <div class="popup__close closePopup"></div>
@@ -275,6 +281,31 @@
           <div class="bookmark__color selectedColor palette__color--deep-red"></div>
           <input type="text" class="bookmark__name__type--add" placeholder="북마크 명을 입력해주세요.">
           <div class="bookmark__add"></div>
+        </div>
+      </div>
+      <div class="popup__footer">
+        <button type="button" class="btn buttonOk">확인</button>
+      </div>
+    </div>
+    <div class="popup popup_type--bookmark-list hide" id="popupBookmarkList">
+      <div class="popup__header">
+        <div class="popup__title">Bookmark</div>
+        <div class="popup__close closePopup"></div>
+      </div>
+      <div class="popup__body">
+        <div class="bookmark__list">
+          <div class="bookmark">
+            <div class="bookmark__color--red">선택 아님</div>
+            <div></div>
+          </div>
+          <div class="bookmark">
+            <div class="bookmark__color--green bookmark__selected">선택</div>
+            <div></div>
+          </div>
+          <div class="bookmark">
+            <div class="bookmark__color--blue">일이삼사오육칠팔구십</div>
+            <div></div>
+          </div>
         </div>
       </div>
       <div class="popup__footer">
