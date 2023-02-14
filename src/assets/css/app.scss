@@ -275,9 +275,10 @@ hr {
   text-align: left;
 
   > div:first-child {
+    box-sizing: border-box;
     flex-basis: 70%;
     max-width: 70%;
-    padding: 4px 2px;
+    padding: 4px 4px 4px 8px;
     @include ellipsis;
 
     &.bookmark__selected {
