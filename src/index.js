@@ -1,5 +1,5 @@
 import "/src/assets/css/app.scss";
-// 깃 테스트
+
 console.log('index.js!!');
 
 window.onload = () => {
